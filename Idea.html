@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Cliente</title>
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Idea_Cliente_Admi.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Idea.css">
+</head>
+
+<body>
+  <nav class="navigation">
+    <a href="Principal.html" class="logo">
+      <img src="Image/Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
+    <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Idea.html" class="active"><i class="fas fa-lightbulb"></i> Ideas</a> <!-- Nuevo enlace -->
+    <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cierre Sesión</a>
+    <a href="Cuenta.html"><i class="fas fa-user-circle"></i> Cuenta</a>
+  </nav>
+
+  <div class="cliente-container">
+    <h1>Bienvenido, Cliente</h1>
+
+    <div class="botones-acciones">
+      <button onclick="abrirModal('modalAgregar')">Agregar Idea</button>
+      <button onclick="abrirModal('modalBuscar')">Buscar Idea</button>
+      <button onclick="abrirModal('modalEliminar')">Eliminar Idea</button>
+    </div>
+
+    <section id="seccion-ideas">
+      <h2>Ideas</h2>
+      <div id="ideas-contenedor"></div>
+    </section>
+
+    <!-- MODAL AGREGAR -->
+    <div id="modalAgregar" class="modal">
+      <div class="modal-content">
+        <span class="cerrar-modal" onclick="cerrarModal('modalAgregar')">&times;</span>
+        <h3>Agregar Idea</h3>
+        <label>Título:</label>
+        <input type="text" id="tituloAgregar">
+        <label>Descripción:</label>
+        <textarea id="descripcionAgregar"></textarea>
+        <label>Categoría:</label>
+        <input type="text" id="categoriaAgregar">
+        <label>Imagen (opcional):</label>
+        <input type="file" id="imagenAgregar" accept="image/*">
+        <button onclick="agregarIdea()">Agregar</button>
+      </div>
+    </div>
+
+
+    <!-- MODAL BUSCAR -->
+    <div id="modalBuscar" class="modal">
+      <div class="modal-content">
+        <span class="cerrar-modal" onclick="cerrarModal('modalBuscar')">&times;</span>
+        <h3>Buscar Idea</h3>
+        <label>Título:</label>
+        <input type="text" id="buscarTitulo">
+        <label>Categoría:</label>
+        <input type="text" id="buscarCategoria">
+        <button onclick="buscarIdea()">Buscar</button>
+      </div>
+    </div>
+
+    <!-- MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal">
+      <div class="modal-content">
+        <span class="cerrar-modal" onclick="cerrarModal('modalEliminar')">&times;</span>
+        <h3>Eliminar Idea</h3>
+        <label>Título a eliminar:</label>
+        <input type="text" id="tituloEliminar">
+        <button onclick="eliminarIdea()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/Idea.js"></script>
+
+</body>
+
+</html>

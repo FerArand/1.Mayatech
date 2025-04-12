@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Cuenta</title>
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Cuenta.css">
+</head>
+
+<body>
+    <nav class="navigation">
+      <a href="Principal.html" class="logo">
+        <img src="Image/Logo.jpg" alt="Dreams & Prints Logo">
+        <span>Dreams & Prints</span>
+      </a>
+      <a href="Principal.html"><i class="fas fa-home"></i> Inicio</a>
+      <a href="Catalogo.html"><i class="fas fa-th-list"></i> Catálogo</a>
+      <a href="Formas_Pago.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+      <a href="Idea.html"><i class="fas fa-lightbulb"></i> Ideas</a> <!-- Nuevo enlace -->
+      <a href="Acerca_de.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+      <a href="Sesion.html"><i class="fas fa-user"></i> Cierre Sesión</a>
+      <a href="Cuenta.html" class="active"><i class="fas fa-user-shield"></i> Cuenta</a>
+    </nav>
+    
+    <main class="content">
+      <section class="profile-container">
+        <div class="profile-image">
+          <label for="imageUpload" class="upload-label">
+            <img id="profilePic" src="https://via.placeholder.com/220?text=" alt="">
+            <div class="camera-icon">
+              <i class="fas fa-camera"></i>
+            </div>
+          </label>
+          <input type="file" id="imageUpload" accept="image/*" style="display: none;" onchange="previewImage(event)">
+        </div>        
+        <div class="profile-info">
+          <h2 id="user-name">Admin: Nombre del Usuario</h2>
+          <p id="user-email">admin@ejemplo.com</p>
+          <div class="profile-buttons">
+            <button onclick="openModal('updateModal')">Actualizar datos</button>
+            <button onclick="openModal('passwordModal')">Modificar contraseña</button>
+            <button onclick="openModal('deleteModal')">Eliminar cuenta</button>
+          </div>
+        </div>
+      </section>      
+      
+      <!-- Modales -->
+      <div id="updateModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('updateModal')">&times;</span>
+          <h3>Actualizar datos</h3>
+          <input type="text" placeholder="Nuevo nombre" id="newName">
+          <input type="email" placeholder="Nuevo correo" id="newEmail">
+          <button onclick="updateData()">Guardar cambios</button>
+        </div>
+      </div>
+      
+      <div id="passwordModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('passwordModal')">&times;</span>
+          <h3>Modificar contraseña</h3>
+          <input type="password" placeholder="Nueva contraseña" id="newPassword">
+          <input type="password" placeholder="Confirmar contraseña" id="confirmPassword">
+          <button onclick="changePassword()">Cambiar contraseña</button>
+        </div>
+      </div>
+      
+      <div id="deleteModal" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('deleteModal')">&times;</span>
+          <h3>¿Estás seguro que deseas eliminar tu cuenta?</h3>
+          <button class="danger" onclick="deleteAccount()">Sí, eliminar</button>
+          <button onclick="closeModal('deleteModal')">Cancelar</button>
+        </div>
+      </div>      
+    </main>
+
+  <!-- JavaScript code -->
+  <script src="js/Cuenta_Admi.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Catálogo</title>
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Catalogo_Admi.css">
+</head>
+
+<body>
+  <nav class="navigation">
+    <a href="Principal_Admi.html" class="logo">
+      <img src="Image/Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
+    <a href="Principal_Admi.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo_Admi.html" class="active"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago_Admi.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Idea_Admi.html"><i class="fas fa-tools"></i> Administrar Ideas</a> <!-- Nuevo enlace -->
+    <a href="Acerca_de_Admi.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cierre Sesión</a>
+  </nav>
+
+  <div class="admin-container">
+    <div class="botones-acciones">
+      <button onclick="abrirModal('modalAgregar')">Agregar Producto</button>
+    </div>
+  </div>
+
+
+  <main class="catalog-list" id="catalog-list">
+    <div id="catalog-item-1" class="catalog-item">
+      <img src="Image/Mano.jpg" alt="Mano">
+      <div class="catalog-info">
+        <h2>Mano</h2>
+        <p>Con la impresión 3D, podemos crear una réplica precisa y detallada de una mano, capturando cada contorno y
+          textura. Esta tecnología permite personalizar modelos realistas, perfectos para proyectos artísticos,
+          educativos o como una pieza única y personalizada.</p>
+        <div class="action-buttons">
+          <button class="edit-btn" onclick="editProduct('catalog-item-1')">Editar</button>
+          <button class="delete-btn" onclick="deleteProduct('catalog-item-1')">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div id="catalog-item-2" class="catalog-item">
+      <img src="Image/Barco.jpg" alt="Barco">
+      <div class="catalog-info">
+        <h2>Barco</h2>
+        <p>Con la impresión 3D, podemos crear un barco detallado y personalizado, desde modelos decorativos hasta
+          diseños complejos. Esta tecnología permite reproducir formas precisas con acabados profesionales y materiales
+          duraderos, haciendo realidad tus ideas de manera única y creativa.</p>
+        <div class="action-buttons">
+          <button class="edit-btn" onclick="editProduct('catalog-item-2')">Editar</button>
+          <button class="delete-btn" onclick="deleteProduct('catalog-item-2')">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div id="catalog-item-3" class="catalog-item">
+      <img src="Image/Cara.jpg" alt="Cara">
+      <div class="catalog-info">
+        <h2>Cara</h2>
+        <p>Con la impresión 3D, podemos crear una réplica detallada y precisa de una cara, capturando cada rasgo y
+          expresión. Esta tecnología permite personalizar modelos faciales con gran realismo, ideal para proyectos
+          artísticos, estudios o recuerdos únicos.</p>
+        <div class="action-buttons">
+          <button class="edit-btn" onclick="editProduct('catalog-item-3')">Editar</button>
+          <button class="delete-btn" onclick="deleteProduct('catalog-item-3')">Eliminar</button>
+        </div>
+      </div>
+    </div>
+    <div id="catalog-item-4" class="catalog-item">
+      <img src="Image/Mascara.jpg" alt="Mascara">
+      <div class="catalog-info">
+        <h2>Mascara</h2>
+        <p>Convierte tus ideas en realidad con la impresión 3D, creando máscaras únicas y personalizadas con gran
+          detalle y precisión. Desde diseños estilizados hasta creaciones innovadoras, esta tecnología permite formas
+          complejas, personalización total y acabados profesionales en materiales de alta calidad. ¡Imagina, diseña e
+          imprime sin límites!</p>
+        <div class="action-buttons">
+          <button class="edit-btn" onclick="editProduct('catalog-item-4')">Editar</button>
+          <button class="delete-btn" onclick="deleteProduct('catalog-item-4')">Eliminar</button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div class="add-product">
+    <button onclick="addProduct()">Agregar Producto</button>
+  </div>
+
+  <div id="modalAgregar" class="modal">
+    <div class="modal-content">
+      <span class="cerrar-modal" onclick="cerrarModal('modalAgregar')">&times;</span>
+      <h3>Agregar Producto</h3>
+      <form id="formAgregarProducto" enctype="multipart/form-data">
+        <label for="nombre">Nombre:</label>
+        <input type="text" name="nombre" id="nombre" required>
+
+        <label for="descripcion">Descripción:</label>
+        <textarea name="descripcion" id="descripcion" required></textarea>
+
+        <label for="precio">Precio:</label>
+        <input type="number" step="0.01" name="precio" id="precio" required>
+
+        <label for="categoria">Categoría:</label>
+        <input type="text" name="categoria" id="categoria" required>
+
+        <label for="stock">Stock:</label>
+        <input type="number" name="stock" id="stock" required>
+
+        <select name="estado">
+          <option value="Disponible">Disponible</option>
+          <option value="No Disponible">No Disponible</option>
+        </select>
+
+        <label for="imagen">Imagen:</label>
+        <input type="file" name="imagen" id="imagen" accept="image/*">
+
+        <button type="submit">Agregar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- JavaScript code -->
+  <script src="js/Catalogo_Admi.js"></script>
+</body>
+
+</html>

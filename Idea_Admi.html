@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>D&P: Administrador</title>
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Idea_Cliente_Admi.css">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Idea_Admi.css">
+</head>
+
+<body>
+  <nav class="navigation">
+    <a href="Principal_Admi.html" class="logo">
+      <img src="Image/Logo.jpg" alt="Dreams & Prints Logo">
+      <span>Dreams & Prints</span>
+    </a>
+    <a href="Principal_Admi.html"><i class="fas fa-home"></i> Inicio</a>
+    <a href="Catalogo_Admi.html"><i class="fas fa-th-list"></i> Catálogo</a>
+    <a href="Formas_Pago_Admi.html"><i class="fas fa-credit-card"></i> Formas de Pago</a>
+    <a href="Idea_Admi.html" class="active"><i class="fas fa-tools"></i> Administrar Ideas</a>
+    <a href="Acerca_de_Admi.html"><i class="fas fa-info-circle"></i> Acerca de</a>
+    <a href="Sesion.html"><i class="fas fa-user"></i> Cierre Sesión</a>
+  </nav>
+
+  <div class="admin-container">
+    <h1>Bienvenido, Administrador</h1>
+
+    <div class="botones-acciones">
+      <button onclick="abrirModal('modalBuscar')">Buscar Idea</button>
+      <button onclick="abrirModal('modalEliminar')">Eliminar Idea</button>
+    </div>
+
+    <section id="seccion-ideas">
+      <h2>Ideas</h2>
+      <div id="ideas-contenedor"></div>
+    </section>
+
+    <!-- MODAL BUSCAR -->
+    <div id="modalBuscar" class="modal">
+      <div class="modal-content">
+        <span class="cerrar-modal" onclick="cerrarModal('modalBuscar')">&times;</span>
+        <h3>Buscar Idea</h3>
+        <label>Título:</label>
+        <input type="text" id="buscarTitulo">
+        <label>Categoría:</label>
+        <input type="text" id="buscarCategoria">
+        <button onclick="buscarIdea()">Buscar</button>
+      </div>
+    </div>
+
+    <!-- MODAL ELIMINAR -->
+    <div id="modalEliminar" class="modal">
+      <div class="modal-content">
+        <span class="cerrar-modal" onclick="cerrarModal('modalEliminar')">&times;</span>
+        <h3>Eliminar Idea</h3>
+        <label>Título a eliminar:</label>
+        <input type="text" id="tituloEliminar">
+        <button onclick="eliminarIdea()">Eliminar</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/Idea_Admi.js"></script>
+</body>
+</html>

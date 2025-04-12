@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html class="carrito" lang="es">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pago</title>
+  <link rel="icon" type="image/x-icon" href="Image/favicon.ico">
+  <link rel="stylesheet" type="text/css" href="css/Estilo_Pago.css" />
+</head>
+
+<body>
+  <div class="grid align__item">
+    <h2>Ingrese su información de pago a continuación</h2>
+
+    <!-- Detalles Tarjeta -->
+    <div id="metodo-tarjeta" class="card">
+      <header class="card__header">
+        <h3 class="card__title">Detalles del pago</h3>
+        <svg xmlns="http://www.w3.org/2000/svg" class="card__logo" width="140" height="43" viewBox="0 0 175.7 53.9">
+          <!-- ... SVG contenido ... -->
+        </svg>
+      </header>
+
+      <form action="" method="post" class="form">
+        <div class="card__number form__field">
+          <label for="card__number" class="card__number__label">Número de tarjeta</label>
+          <input type="text" id="card__number" class="card__number__input" placeholder="1234 1234 1234 1234" />
+        </div>
+
+        <div class="card__expiration form__field">
+          <label for="card__expiration__year">Expiración</label>
+          <select id="card__expiration__month">
+            <option value="01">Enero</option>
+            <!-- ... más meses ... -->
+          </select>
+          <select id="card__expiration__year">
+            <option value="2025">2025</option>
+            <!-- ... más años ... -->
+          </select>
+        </div>
+
+        <div class="card__ccv form__field">
+          <label for="">CCV</label>
+          <input type="text" class="card__ccv__input" placeholder="583" />
+        </div>
+      </form>
+    </div>
+
+    <!-- Detalles Pago Efectivo -->
+    <div id="metodo-efectivo" class="efectivo-info hidden">
+      <div id="detalles-compra" class="detalles-compra"></div>
+      <div id="monto-a-pagar" class="monto-pagar"></div>
+      <div id="codigo-barras" class="codigo-barras hidden">
+        <p><strong>Pago en OXXO</strong></p>
+        <div
+          style="font-family:monospace; font-size:20px; letter-spacing:4px; border:1px solid #000; padding:10px; display:inline-block;">
+          1010 2030 4050 6070
+        </div>
+      </div>
+
+      <p>Usted ha elegido pagar en <strong>efectivo</strong>. Por favor, entregue el monto exacto.</p>
+    </div>
+
+    <!-- Botón para cambiar método -->
+    <p class="text--center">
+      <a class="cambiar-metodo" onclick="cambiarMetodo()">Cambiar método de pago</a>
+    </p>
+  </div>
+
+  <!-- JavaScript code -->
+  <script src="js/Pago.js"></script>
+
+</body>
+
+</html>
